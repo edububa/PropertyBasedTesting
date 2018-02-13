@@ -1,0 +1,9 @@
+*Main> quickCheck prop_DoubleCycle
+(0 tests; 11 discarded)
+
+
+--------------------------------------------------------
+
+*Main> quickCheck prop_DoubleCycle'
++++ OK, passed 100 tests.
+*Main>

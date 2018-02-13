@@ -96,7 +96,7 @@
 \end{frame}
 
 % \begin{frame}[standout]
-%   % ¡Atención!
+%   %   ¡Atención!
 % \end{standout}
 
 \begin{frame}[standout]
@@ -150,17 +150,80 @@
 \end{frame}
 
 \begin{frame}{Estructuras Infinitas}
+  Hay una sutil diferencia entre estas dos propiedades:
+  \inputminted{haskell}{data/infinite.hs}
+\end{frame}
 
+\begin{frame}[standout]
+  \Fontvi
+  \inputminted{text}{data/infinite_prueba.txt}
 \end{frame}
 
 \begin{frame}{Generadores}
+  Además de los generadores propios de QuickCheck se pueden
+  implementar generadores propios.
 
+  Para implementar generadores se
+  utiliza la \textit{typeclass}:
+  \inputminted{haskell}{data/arbitrary.hs}
+
+  Ejemplo:
+  \inputminted{haskell}{data/colours.hs}
 \end{frame}
 
-\begin{frame}{Modificadores}
-  Podemos utilizar modificadores para generar argumentos con
-  determinadas propiedades:
+\begin{frame}[standout]
+  \Fontvi
+  \inputminted{text}{data/colours_prueba.txt}
+\end{frame}
 
+\begin{frame}{Generadores}
+  Podemos mejorar nuestros generadores controlando, por ejemplo, la
+  frecuencia con la que se generan determinados valores.
+
+  \inputminted{haskell}{data/colours1.hs}
+\end{frame}
+
+\begin{frame}[standout]
+  \Fontvi
+  \inputminted{text}{data/colours1_prueba.txt}
+\end{frame}
+
+\begin{frame}{Modificadores}    %TODO
+  Podemos mejorar nuestros generadores aplicándoles modificadores, que
+  aportan ciertas propiedades:
+
+  \inputminted{haskell}{data/modificadores.hs}
+
+  Para buscar más modificadores consultar $Test.QuickCheck.Modifiers$
+\end{frame}
+
+\begin{frame}[standout]
+  \Fontvi
+  \inputminted{text}{data/modificadores_prueba.txt}
+\end{frame}
+
+\begin{frame}{Modificadores}    %TODO
+  Con modificadores podemos conseguir que siempre se generen datos
+  correctos para propiedades que requieren condiciones.
+
+  Ejemplo:
+  \inputminted{haskell}{data/modificadores2.hs}
+\end{frame}
+
+\begin{frame}[standout]
+  \Fontvi
+  \inputminted{text}{data/modificadores2_pruebas.txt}
+\end{frame}
+
+\section{Casos de Estudio}
+
+\begin{frame}
+  \begin{itemize}
+  \item Unificación.
+  \item Propiedades en circuitos.
+  \item \textit{Pretty Printing}.
+  \item Edison.
+  \end{itemize}
 \end{frame}
 
 \appendix
@@ -170,6 +233,10 @@
   \bibliographystyle{acm}
   \bibliography{presentacion}
 
+\end{frame}
+
+\begin{frame}[standout]
+  ¿Preguntas?
 \end{frame}
 
 \end{document}

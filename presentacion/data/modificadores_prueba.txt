@@ -1,0 +1,14 @@
+*Main> sample (arbitrary :: Gen (OrderedList Int))
+Ordered {getOrdered = []}
+Ordered {getOrdered = [-2,2]}
+Ordered {getOrdered = [-3,2]}
+Ordered {getOrdered = [-5,-3,-1,2,4,4]}
+Ordered {getOrdered = [-2,1,2,4]}
+Ordered {getOrdered = [-10,-7,-7,-6,-4,-3,0,1,4,7]}
+Ordered {getOrdered = [-4,-1,5,8,9]}
+Ordered {getOrdered = [-9,9,13]}
+Ordered {getOrdered = [-12,-10,-5,5,14,16]}
+Ordered {getOrdered = []}
+Ordered {getOrdered = [-20,-17,-15,-11,-10,-10,-2,1,1,3,5,7,7,
+   11,15,19,19]}
+*Main>

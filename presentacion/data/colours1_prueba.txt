@@ -1,0 +1,13 @@
+*Main> sample (arbitrary :: Gen Colour)
+Red
+Blue
+Blue
+Blue
+Red
+Green
+Blue
+Red
+Blue
+Blue
+Blue
+*Main>
