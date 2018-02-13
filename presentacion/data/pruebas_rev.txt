@@ -1,9 +1,3 @@
-$ ghci
-GHCi, version 8.2.2: http://www.haskell.org/ghc/  :? for help
-Prelude> import Test.QuickCheck
-*Main Test.QuickCheck> :l reverse_prop.hs
-[1 of 1] Compiling Main      ( reverse_prop.hs, interpreted )
-Ok, one module loaded.
 *Main Test.QuickCheck> quickCheck prop_RevUnit
 +++ OK, passed 100 tests.
 *Main Test.QuickCheck> quickCheck prop_RevApp

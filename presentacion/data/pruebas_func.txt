@@ -1,9 +1,3 @@
-$ ghci
-GHCi, version 8.2.2: http://www.haskell.org/ghc/  :? for help
-Prelude> import Test.QuickCheck
-Prelude Test.QuickCheck> :l func_prop.hs
-[1 of 1] Compiling Main         ( func_prop.hs, interpreted )
-Ok, one module loaded.
 *Main Test.QuickCheck> quickCheck prop_CompAssoc
 +++ OK, passed 100 tests.
 *Main Test.QuickCheck> quickCheck prop_CompCommut

@@ -16,6 +16,9 @@
 
 \usemintedstyle{emacs}
 
+\newcommand\Fontvi{\fontsize{10}{12}\selectfont}
+
+
 \title{Property-Based Testing}
 % \subtitle{A modern beamer theme}
 \date{\today}
@@ -86,31 +89,42 @@
   \inputminted{haskell}{data/reverse_prop.hs}
 \end{frame}
 
-\begin{frame}{Ejecutamos las pruebas}
+
+\begin{frame}[standout]
+  \Fontvi
   \inputminted{text}{data/pruebas_rev.txt}
 \end{frame}
 
-\begin{frame}{¡Atención!}
-  Si comprobamos que ha estado ejecutando QuickCheck en las pruebas
-  anteriores observamos:
+% \begin{frame}[standout]
+%   % ¡Atención!
+% \end{standout}
+
+\begin{frame}[standout]
+  \Fontvi
   \inputminted{text}{data/reverse_prop_pruebas_verb.txt}
 \end{frame}
 
-\begin{frame}{Solución}
-  Tenemos 2 posibles soluciones:
-  \begin{itemize}
-  \item La más exhaustiva usar la función $polyQuickCheck$
-  \item La más sencilla, tipar nuestras propiedades:
-    \inputminted{text}{data/reverse_prop_pruebas_verb1.txt}
-  \end{itemize}
+\begin{frame}[standout]
+  \Fontvi
+  \inputminted{text}{data/reverse_prop_pruebas_verb1.txt}
 \end{frame}
+
+% \begin{frame}{Solución}
+%   Tenemos 2 posibles soluciones:
+%   \begin{itemize}
+%   \item La más exhaustiva usar la función $polyQuickCheck$
+%   \item La más sencilla, tipar nuestras propiedades:
+%
+%   \end{itemize}
+% \end{frame}
 
 \begin{frame}{Propiedades de funciones}
   Propiedad commutativa y asociativa del operador de composición
   \inputminted{haskell}{data/func_prop.hs}
 \end{frame}
 
-\begin{frame}{Ejecutamos las pruebas}
+\begin{frame}[standout]
+  \Fontvi
   \inputminted{text}{data/pruebas_func.txt}
 \end{frame}
 
@@ -118,7 +132,10 @@
   Operación de implicación $(==>)$ para condicionales
   Ejemplo:
   \inputminted{haskell}{data/max_prop.hs}
-  Ejecutamos las pruebas:
+\end{frame}
+
+\begin{frame}[standout]
+  \Fontvi
   \inputminted{text}{data/pruebas_max_prop.txt}
 \end{frame}
 
@@ -127,8 +144,9 @@
   \inputminted{haskell}{data/monitor_test.hs}
 \end{frame}
 
-\begin{frame}{Ejecutamos las pruebas}
-    \inputminted{text}{data/monitor_test_pruebas.txt}
+\begin{frame}[standout]
+  \Fontvi
+  \inputminted{text}{data/monitor_test_pruebas.txt}
 \end{frame}
 
 \begin{frame}{Estructuras Infinitas}
