@@ -1,0 +1,4 @@
+*Main Test.QuickCheck> quickCheck prop_MaxLe
++++ OK, passed 100 tests.
+*Main Test.QuickCheck> quickCheck prop_Insert
+*** Gave up! Passed only 88 tests.

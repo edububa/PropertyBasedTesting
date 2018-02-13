@@ -1,0 +1,157 @@
+\documentclass[10pt]{beamer}
+
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usetheme{metropolis}
+
+\usepackage{appendixnumberbeamer}
+\usepackage{pgfplots}
+\usepackage{booktabs}
+\usepackage[scale=2]{ccicons}
+\usepackage{minted}
+\usepgfplotslibrary{dateplot}
+
+\usepackage{xspace}
+\newcommand{\themename}{\textbf{\textsc{metropolis}}\xspace}
+
+\usemintedstyle{emacs}
+
+\title{Property-Based Testing}
+% \subtitle{A modern beamer theme}
+\date{\today}
+\author{
+  Luis Eduardo Bueso de Barrio\\
+  lbueso@acm.org
+}
+\graphicspath{{./data/}{../resources/}}
+\institute{ACM PLIG}
+\titlegraphic{
+  \hfill\includegraphics[height=1.5cm]{pics/logo_acm_cromo.png}
+  \includegraphics[height=1.5cm]{pics/sig_plig.png}
+}
+
+\begin{document}
+
+\nocite{*}
+
+\maketitle
+
+\begin{frame}{Índice}
+  \setbeamertemplate{section in toc}[sections numbered]
+  \tableofcontents[hideallsubsections]
+\end{frame}
+
+\section{Introducción}
+% TODO
+
+\section{Métodos de testing}
+% TODO
+
+\section{¿Qué es el Property-Based Testing?}
+
+\begin{frame}{Definición}
+  % TODO
+\end{frame}
+
+\begin{frame}{Herramientas}
+  \begin{itemize}
+  \item Haskell \textit{QuickCheck}.
+  \item Erlang \textit{QuickCheck}.
+  \item Erlang \textit{PropEr}.
+  \item Scala \textit{ScalaCheck}.
+  \item Python \textit{Hypothesis}.
+  \item Java 8 \textit{QuickTheories}.
+  \item JavaScript \textit{JSVerify}.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Herramientas}
+  \begin{itemize}
+  \item \textbf{Haskell \textit{QuickCheck}}.
+  \item Erlang \textit{QuickCheck}.
+  \item Erlang \textit{PropEr}.
+  \item Scala \textit{ScalaCheck}.
+  \item Python \textit{Hypothesis}.
+  \item Java 8 \textit{QuickTheories}.
+  \item JavaScript \textit{JSVerify}.
+  \end{itemize}
+\end{frame}
+
+\section{QuickCheck}
+
+\begin{frame}{Propiedades}
+  Ejemplo:
+  \inputminted{text}{data/reverse.hs}
+  Propiedades:
+  \inputminted{haskell}{data/reverse_prop.hs}
+\end{frame}
+
+\begin{frame}{Ejecutamos las pruebas}
+  \inputminted{text}{data/pruebas_rev.txt}
+\end{frame}
+
+\begin{frame}{¡Atención!}
+  Si comprobamos que ha estado ejecutando QuickCheck en las pruebas
+  anteriores observamos:
+  \inputminted{text}{data/reverse_prop_pruebas_verb.txt}
+\end{frame}
+
+\begin{frame}{Solución}
+  Tenemos 2 posibles soluciones:
+  \begin{itemize}
+  \item La más exhaustiva usar la función $polyQuickCheck$
+  \item La más sencilla, tipar nuestras propiedades:
+    \inputminted{text}{data/reverse_prop_pruebas_verb1.txt}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Propiedades de funciones}
+  Propiedad commutativa y asociativa del operador de composición
+  \inputminted{haskell}{data/func_prop.hs}
+\end{frame}
+
+\begin{frame}{Ejecutamos las pruebas}
+  \inputminted{text}{data/pruebas_func.txt}
+\end{frame}
+
+\begin{frame}{Condicionales}
+  Operación de implicación $(==>)$ para condicionales
+  Ejemplo:
+  \inputminted{haskell}{data/max_prop.hs}
+  Ejecutamos las pruebas:
+  \inputminted{text}{data/pruebas_max_prop.txt}
+\end{frame}
+
+\begin{frame}{Monitorización}
+  También podemos monitorizar datos de los tests:
+  \inputminted{haskell}{data/monitor_test.hs}
+\end{frame}
+
+\begin{frame}{Ejecutamos las pruebas}
+    \inputminted{text}{data/monitor_test_pruebas.txt}
+\end{frame}
+
+\begin{frame}{Estructuras Infinitas}
+
+\end{frame}
+
+\begin{frame}{Generadores}
+
+\end{frame}
+
+\begin{frame}{Modificadores}
+  Podemos utilizar modificadores para generar argumentos con
+  determinadas propiedades:
+
+\end{frame}
+
+\appendix
+
+\begin{frame}{Referencias}
+
+  \bibliographystyle{acm}
+  \bibliography{presentacion}
+
+\end{frame}
+
+\end{document}

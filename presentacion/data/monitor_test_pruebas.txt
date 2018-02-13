@@ -1,0 +1,10 @@
+*Main> quickCheck prop_Insert
+*** Gave up! Passed only 70 tests (34% trivial).
+*Main> quickCheck prop_Insert'
+*** Gave up! Passed only 80 tests:
+40% 0
+35% 1
+21% 2
+ 2% 3
+ 1% 4
+*Main>
