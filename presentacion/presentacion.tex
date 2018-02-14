@@ -45,18 +45,41 @@
 \end{frame}
 
 \section{Introducción}
-% TODO
 
-\section{Métodos de testing}
-% TODO
+\begin{frame}                   %TODO
+  El testing es el método de verificación de la calidad de software
+  más usado.
+
+  Problema: consume gran cantidad de recursos (hasta el 50\% del coste
+  del software).
+
+\end{frame}
 
 \section{¿Qué es el Property-Based Testing?}
 
 \begin{frame}{Definición}
-  % TODO
+  El \textit{Property-Based Testing} es una metodología de testing que
+  a través de la especificación de propiedades, el análisis del flujo
+  de datos del programa y la ejecución de tests busca su corrección y
+  completitud.
+
+  Responde a las siguientes preguntas:
+  \begin{itemize}
+  \item ¿Hasta dónde se puede llegar mediante el testing?
+  \item ¿Qué datos se deben usar en los tests?
+  \item ¿Cuándo se ha hecho suficiente testing?
+  \item ¿Cómo se determina si un test es exitoso o fallido?
+  \end{itemize}
+
 \end{frame}
 
-\begin{frame}{Herramientas}
+\begin{frame}{¿Qué ha conseguido hasta ahora?}
+  El \textit{Property-Based Testing} ha evolucionado mucho desde su
+  concepción, y ahora es una metodología muy madura, que reduce en
+  gran medida el precio de la generación de tests.
+
+  Ahora mismo existen gran cantidad de herramientas que utilizan esta
+  metodología:
   \begin{itemize}
   \item Haskell \textit{QuickCheck}.
   \item Erlang \textit{QuickCheck}.
@@ -68,7 +91,15 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Herramientas}
+\begin{frame}{¿Qué ha conseguido hasta ahora?}
+  El \textit{Property-Based Testing} ha evolucionado mucho desde su
+  concepción, y ahora es una metodología muy madura, que reduce en
+  gran medida el precio de la generación de tests.
+
+  Ahora mismo existen gran cantidad de herramientas que utilizan esta
+  metodología:
+  % \begin{columns}
+  %   \begin{column}{0.5\textwidth}
   \begin{itemize}
   \item \textbf{Haskell \textit{QuickCheck}}.
   \item Erlang \textit{QuickCheck}.
@@ -78,9 +109,30 @@
   \item Java 8 \textit{QuickTheories}.
   \item JavaScript \textit{JSVerify}.
   \end{itemize}
+  % \end{column}
+  % \begin{column}{0.5\textwidth}
+  %     %   \includegraphics[height=1.5cm]{pics/haskell_logo_star.jpg}
+  % \end{column}
+  % \end{columns}
 \end{frame}
 
 \section{QuickCheck}
+
+\begin{frame}{¿Qué es QuickCheck?}
+  \textit{QuickCheck} es una herramienta de creación y testeo de
+  propiedades sobre los programas (\textit{Property-Based Testing}).
+
+  Permite la descripción de propiedades mediante funciones en Haskell
+  que se prueban sobre una entrada aleatoria.
+
+  Permite la creación de generadores propios.
+
+  \textit{QuickCheck} es un \textit{DSL} (\textit{Domain-Specific
+    Language}) de especificación de tests.
+
+  Herramienta muy ligera, la implementación original tenía sobre 300
+  líneas de código.
+\end{frame}
 
 \begin{frame}{Propiedades}
   Ejemplo:
@@ -96,7 +148,7 @@
 \end{frame}
 
 % \begin{frame}[standout]
-%   %   ¡Atención!
+%   \textexclamdown Atención!
 % \end{standout}
 
 \begin{frame}[standout]
@@ -108,15 +160,6 @@
   \Fontvi
   \inputminted{text}{data/reverse_prop_pruebas_verb1.txt}
 \end{frame}
-
-% \begin{frame}{Solución}
-%   Tenemos 2 posibles soluciones:
-%   \begin{itemize}
-%   \item La más exhaustiva usar la función $polyQuickCheck$
-%   \item La más sencilla, tipar nuestras propiedades:
-%
-%   \end{itemize}
-% \end{frame}
 
 \begin{frame}{Propiedades de funciones}
   Propiedad commutativa y asociativa del operador de composición
@@ -130,6 +173,7 @@
 
 \begin{frame}{Condicionales}
   Operación de implicación $(==>)$ para condicionales
+
   Ejemplo:
   \inputminted{haskell}{data/max_prop.hs}
 \end{frame}
@@ -215,12 +259,23 @@
   \inputminted{text}{data/modificadores2_pruebas.txt}
 \end{frame}
 
-\section{Casos de Estudio}
+\section{Conclusiones y observaciones}
 
 \begin{frame}
+  Problemas:
+  \begin{itemize}
+  \item Definir propiedades en muchos casos, no es una tarea trivial.
+  \item Los \textit{side-effects} pueden ser difíciles de verificar.
+  \end{itemize}
+  A pesar de estos problemas, definir propiedades, nos aporta una gran
+  recompensa.
+
+  Los lenguajes funcionales puros son más fáciles de testear.
+
+  Algunos ejemplos reales de uso de \textit{QuickCheck}:
   \begin{itemize}
   \item Unificación.
-  \item Propiedades en circuitos.
+  \item Propiedades en circuitos con \textit{Lava}.
   \item \textit{Pretty Printing}.
   \item Edison.
   \end{itemize}
